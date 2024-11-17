@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Orbitron:wght@400..900&family=Oswald:wght@200..700&display=swap');
+*{
+    margin:0;
+    padding:0;
+}
+
+
+.navbar{
+    width:100vw;
+    padding:0.5rem 0rem 0.5rem 0rem;
+    display:flex;
+    align-items: center;justify-content: space-between;
+    height: 7.5vh;
+    background-color: #db4a2b;
+}
+.menuicon{
+    padding-left: 1rem;
+    font-size: 2rem;
+    color:white;
+}
+.logoimg{
+    margin-top: 1rem;
+    height:3.5rem;
+    width:12rem;
+    object-fit: cover;
+}
+.setgBtn{
+    background-color: #db4a2b;
+    color:white;
+    padding:0.3rem 1rem 0.3rem 1rem;
+    border:3px solid white;
+    border-radius: 5rem;
+    font-family: "Archivo Black", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 2rem;
+    font-weight: 900;
+}
+.setgBtn:hover{
+    cursor: pointer;
+}
+.prof{
+    padding-right: 1rem;
+    color:white;
+    font-size: 2.5rem;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+}
+.yGs{
+    height:42.5vh;
+    background-color: #FFFFC7;
+    text-align: center;
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    padding-top:1rem;
+    border-bottom: 3px solid black;
+}
+
+.bottom{
+    display:flex;
+    height: 45vh;
+    background-color:#FFFFC7;
+}
+.mGs{
+    width:33vw;
+    border-right: 2px solid black;
+    text-align: center;
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-style: normal;
+    padding-top:1rem;
+}
+.wGs{
+    width:33vw;
+    border-right: 2px solid black;
+    text-align: center;
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-style: normal;
+    padding-top:1rem;
+}
+.tGs{
+    text-align: center;
+    width:33vw;
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-style: normal;
+    padding-top:1rem;
+}
