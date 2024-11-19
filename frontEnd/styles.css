@@ -5,6 +5,7 @@
 }
 
 
+/* Navbar */
 .navbar{
     width:100vw;
     padding:0.5rem 0rem 0.5rem 0rem;
@@ -24,31 +25,21 @@
     width:12rem;
     object-fit: cover;
 }
-.setgBtn{
-    background-color: #db4a2b;
-    color:white;
-    padding:0.3rem 1rem 0.3rem 1rem;
-    border:3px solid white;
-    border-radius: 5rem;
-    font-family: "Archivo Black", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-size: 2rem;
-    font-weight: 900;
-}
-.setgBtn:hover{
-    cursor: pointer;
-}
 .prof{
     padding-right: 1rem;
     color:white;
     font-size: 2.5rem;
 }
+
+
 .main{
     display: flex;
     flex-direction: column;
 }
 .yGs{
+    display: flex;
+    align-items:flex-start;
+    justify-content: space-around;
     height:42.5vh;
     background-color: #FFFFC7;
     text-align: center;
@@ -58,13 +49,24 @@
     padding-top:1rem;
     border-bottom: 3px solid black;
 }
-
+.set,.edit{
+    cursor:pointer;
+    background-color:#FFFFC7;
+    padding:0.5rem 1rem 0.5rem 1rem;
+    border-radius: 15px;
+    border: 0.1rem solid black;
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
 .bottom{
     display:flex;
     height: 45vh;
     background-color:#FFFFC7;
 }
 .mGs{
+    display:flex;
+    align-items: flex-start;justify-content: space-around;
     width:33vw;
     border-right: 2px solid black;
     text-align: center;
@@ -76,6 +78,8 @@
     padding-top:1rem;
 }
 .wGs{
+    display:flex;
+    align-items: flex-start;justify-content: space-around;
     width:33vw;
     border-right: 2px solid black;
     text-align: center;
@@ -87,6 +91,8 @@
     padding-top:1rem;
 }
 .tGs{
+    display:flex;
+    align-items: flex-start;justify-content: space-around;
     text-align: center;
     width:33vw;
     font-family: "Orbitron", sans-serif;
@@ -95,4 +101,56 @@
     font-weight: 500;
     font-style: normal;
     padding-top:1rem;
+}
+
+/* Form */
+
+.overlay{
+    z-index: 1000;
+    position: fixed;
+    top:0;left: 0;
+    display: none;
+    height: 100%;width: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+
+.ygsSetForm{
+    display: none;
+    position:fixed;
+    left:35vw;
+    top:27vh;
+    z-index:1100;
+    height:50vh;
+    width:25vw;
+    background-color: #FFFFC7;
+    border:1px outset black;
+    filter: brightness("100%");
+    padding: 2rem 2rem 3rem 2rem;
+}
+.contentYGSF{
+    display: flex;gap:2.5vh;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+.yBut{
+    width:15vw;
+    height:5vh;
+    background-color: #db4a2b;
+    color:white;
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-size: large;
+    font-style: normal;
+}
+.ysetLab{
+    margin-right: 1rem;
+}
+#yearselection{
+    width:15vw;
 }
