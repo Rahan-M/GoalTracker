@@ -119,17 +119,18 @@
     display: none;
     position:fixed;
     left:35vw;
-    top:27vh;
+    top:25vh;
     z-index:1100;
-    height:50vh;
+    height:55vh;
     width:25vw;
+    border-radius: 5%;
     background-color: #FFFFC7;
     border:1px outset black;
     filter: brightness("100%");
     padding: 2rem 2rem 3rem 2rem;
 }
 .contentYGSF{
-    display: flex;gap:2.5vh;
+    display: flex;gap:4vh;
     flex-direction: column;
     align-items: center;
     font-family: "Orbitron", sans-serif;
@@ -137,15 +138,24 @@
     font-weight: 700;
     font-style: normal;
 }
+.txtArea{
+    font-family: "Oswald", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
 .yBut{
     width:15vw;
     height:5vh;
     background-color: #db4a2b;
     color:white;
+    border-radius:3rem;
     font-family: "Orbitron", sans-serif;
     font-optical-sizing: auto;
     font-weight: 900;
     font-size: large;
+    border:1px outset white;
+    filter:drop-shadow(100%);
     font-style: normal;
 }
 .ysetLab{

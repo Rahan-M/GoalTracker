@@ -1,14 +1,14 @@
 const {readFile,writeFile}=require('fs');
 const setYGS=(req,res)=>{
     const data=req.body;
+    if(!data || data.year==="" || data.goals===""){
+        return res
+        .status(404)
+        .json({succes:false,msg:"Please Enter Name"});
+    }
     let goal=(data.goals).trim();
     const filePath=`./data/YGS${data.year}.json`
     const newData={year:data.year,goal:goal};
-    if(!data){
-        return res
-            .status(404)
-            .json({succes:false,msg:"Please Enter Name"});
-    }
     // So I'm reading the file for that year's goals , if it doesn't exist we create it , if it does we append to it(not exactly)
     readFile(filePath,'utf-8',(err,data)=>{
         if(err && err.code === "ENOENT"){
