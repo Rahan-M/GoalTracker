@@ -14,7 +14,7 @@ yfsetBtn.addEventListener('click',async (e)=>{
             year:yearInput.value,
             goals:yearGoals.value
         };
-        await axios.post('/api/setYGs',data);
+        await axios.post('/YGS/set',data);
         darken();
     }catch(error){
         console.log(error);
