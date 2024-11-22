@@ -1,7 +1,7 @@
 const overlay=document.querySelector(".overlay");
 const formElements=document.querySelectorAll('form');
 const setBtns=document.querySelectorAll(".set");
-const editBtns=document.querySelectorAll(".edit");
+const removeBtns=document.querySelectorAll(".remove");
 let isDark=false;
 const darken=()=>{
     if(isDark){
@@ -17,11 +17,9 @@ const darken=()=>{
         isDark=true;
     }
 }
+
 overlay.addEventListener('click',darken);
-// setBtns.forEach((setBtn,i)=>{
-//     setBtn.addEventListener('click',darken)
-// })
-editBtns.forEach((setBtn,i)=>{
+removeBtns.forEach((setBtn,i)=>{
     setBtn.addEventListener('click',darken)
 })
 

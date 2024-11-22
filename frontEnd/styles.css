@@ -37,9 +37,8 @@
     flex-direction: column;
 }
 .yGs{
-    display: flex;
-    align-items:flex-start;
-    justify-content: space-around;
+    display:flex;
+    flex-direction: column;
     height:42.5vh;
     background-color: #FFFFC7;
     text-align: center;
@@ -49,7 +48,24 @@
     padding-top:1rem;
     border-bottom: 3px solid black;
 }
-.set,.edit{
+.ygshead{
+    display: flex;
+    align-items:flex-start;
+    justify-content: space-around;
+    margin-bottom: 5vh;
+}
+.contentYGS{
+    width:100vw;
+    display: flex; 
+    justify-content: space-around;
+}
+.content1YGS,.content2YGS{
+    display:flex;
+    flex-direction: column;
+    gap:1.5vh;
+    align-items:start;
+}
+.set,.remove{
     cursor:pointer;
     background-color:#FFFFC7;
     padding:0.5rem 1rem 0.5rem 1rem;
