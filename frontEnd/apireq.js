@@ -32,3 +32,8 @@ wfsetBtn.addEventListener('click',async (e)=>{
     e.preventDefault();
     setWGs()
 })
+let wfremBtn=document.querySelector('.wButRem');
+wfremBtn.addEventListener('click',async (e)=>{
+    e.preventDefault();
+    remWGs()
+})

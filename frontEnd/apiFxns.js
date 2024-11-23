@@ -89,3 +89,28 @@ const setWGs=async ()=>{
         console.log(error);
     }
 }
+
+const remWGs=async ()=>{
+    const dateInputReWGS=document.querySelector('#dateselectionRemWGS');
+    const reWGoalInd=document.querySelector('#goalSelectionWGrem');
+    const datestr=dateInputReWGS.value;
+    const dateObj={year:Number(datestr.slice(6,10)),
+        month:Number(datestr.slice(3,5))-1,
+        date:Number(datestr.slice(0,2))
+    }
+    const date=new Date(dateObj.year,dateObj.month,dateObj.date);
+    const weekNo=getWeek(date);
+    try{
+        const data={
+            year:dateObj.year,
+            weekNo:weekNo,
+            Ind:reWGoalInd.value
+        }
+        await axios.delete('WGS/rem',{
+            data:data
+        });
+        darken();
+    }catch(error){
+        console.log(error);
+    }
+}

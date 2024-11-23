@@ -55,3 +55,10 @@ wsetBtn.addEventListener('click',()=>{
     wsetform.style.display="block";
     darken();
 })
+
+const wremBtn=document.querySelector(".remWGS");
+const wremform=document.querySelector(".wgsRemForm");
+wremBtn.addEventListener('click',()=>{
+    wremform.style.display="block";
+    darken();
+})
