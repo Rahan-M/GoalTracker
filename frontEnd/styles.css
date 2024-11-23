@@ -73,6 +73,9 @@
     justify-content: space-around;
     margin-bottom: 5vh;
 }
+.yearGoalsHead{
+    font-weight:900;
+}
 .contentYGS{
     width:100vw;
     display: flex; 

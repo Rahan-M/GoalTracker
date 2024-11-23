@@ -1,5 +1,9 @@
+const yearHead=document.querySelector(".yearGoalsHead");
+const currDate=new Date();
+yearHead.innerText=`${currDate.getFullYear()} Goals`;
+
 const LoadYGS=async ()=>{
-    const respYGS=await axios.get(`/YGS/get/${date.getFullYear()+1}`);
+    const respYGS=await axios.get(`/YGS/get/${date.getFullYear()}`);
     const dataYGS=await respYGS.data;
     dataYGS.forEach((element,i) => {
         let h3=document.createElement('h3');
@@ -14,7 +18,7 @@ const LoadYGS=async ()=>{
 
 const LoadMGS=async ()=>{
     const date=new Date();
-    const respMGS=await axios.get(`/MGS/get/${date.getFullYear()+1}/${date.getMonth()}`);
+    const respMGS=await axios.get(`/MGS/get/${date.getFullYear()}/${date.getMonth()}`);
     const dataMGS=respMGS.data;
     const mgsCont=document.querySelector(".contentMGS")
     dataMGS.forEach((element,i) => {
