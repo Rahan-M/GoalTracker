@@ -48,3 +48,10 @@ mremBtn.addEventListener('click',()=>{
     mremform.style.display="block";
     darken();
 })
+
+const wsetBtn=document.querySelector(".setWGS");
+const wsetform=document.querySelector(".wgsSetForm");
+wsetBtn.addEventListener('click',()=>{
+    wsetform.style.display="block";
+    darken();
+})

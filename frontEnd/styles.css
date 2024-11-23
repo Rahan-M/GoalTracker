@@ -85,7 +85,7 @@
     align-items:start;
 }
 /* YGS Forms */
-.ygsSetForm,.mgsSetForm{
+.ygsSetForm,.mgsSetForm,.wgsSetForm{
     display: none;
     position:fixed;
     left:35vw;
@@ -99,7 +99,7 @@
     filter: brightness("100%");
     padding: 2rem 2rem 3rem 2rem;
 }
-.contentYGSF,.contentMGSF{
+.contentYGSF,.contentMGSF,.contentWGSF{
     display: flex;gap:4vh;
     flex-direction: column;
     align-items: center;
@@ -114,7 +114,7 @@
     font-weight: 400;
     font-style: normal;
 }
-.yButSet,.yButRem,.mButSet,.mButRem{
+.yButSet,.yButRem,.mButSet,.mButRem,.wButSet,.wButRem{
     width:15vw;
     height:5vh;
     background-color: #db4a2b;
@@ -134,7 +134,7 @@
 #yearselection{
     width:15vw;
 }
-.ygsRemForm,.mgsRemForm{
+.ygsRemForm,.mgsRemForm,.wgsRemForm{
     display: none;
     position:fixed;
     left:35vw;
@@ -176,12 +176,12 @@
     font-style: normal;
     padding-top:1rem;
 }
-.mgsTop{
+.mgsTop,.wgsTop{
     display:flex;
     align-items: flex-start;justify-content: space-around;
     width:33vw;
 }
-.contentMGS{
+.contentMGS,.contentWGS{
     display:flex;gap:1.5vh;
     flex-direction: column;
     align-items: flex-start;
@@ -202,8 +202,9 @@
     height:32vh;
 }
 
+/* WGS */
 .wGs{
-    display:flex;
+    display:flex;flex-direction: column;
     align-items: flex-start;justify-content: space-around;
     width:33vw;
     border-right: 2px solid black;
@@ -214,6 +215,10 @@
     font-weight: 500;
     font-style: normal;
     padding-top:1rem;
+}
+.wgsSetForm{
+    top:18vh;
+    height:63vh;
 }
 .tGs{
     display:flex;
@@ -228,6 +233,5 @@
     padding-top:1rem;
 }
 
-/* Form */
 
 

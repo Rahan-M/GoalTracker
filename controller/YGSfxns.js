@@ -1,6 +1,4 @@
-const { json } = require('express');
 const {readFile,writeFile}=require('fs');
-const { stringify } = require('querystring');
 const setYGS=(req,res)=>{
     const data=req.body;
     let goal=(data.goals).trim();

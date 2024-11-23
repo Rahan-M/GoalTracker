@@ -85,6 +85,33 @@
                     <button type="submit" class="mButRem">Remove<button>
                 </div>
             </form>
+            <form class="wgsSetForm">
+                <div class="contentWGSF">
+                    <div class="entYr">
+                        <label for="dateSelectionWGS" class="dsetLabWGS">Enter Date in dd/mm/yyyy format</label>
+                        <input type="text" id="dateSelectionWGS" name="date">
+                    </div>
+                    <div class="goalsTxt">
+                        <label for="wgoals" class="msetGLab">Enter Your Goals Here :</label>
+                        <textarea name="Wgoals" id="wgoals" rows="15" cols="70" class="txtArea">
+                        </textarea>
+                    </div>
+                    <button type="submit" class="wButSet">Set !!!</button>
+                </div>
+            </form>
+            <form class="wgsRemForm">
+                <div class="contentWGSF">
+                    <div class="entDtWGrem">
+                        <label for="dateselectionRemWGS" class="msetLab">Enter Date (dd/mm/yyyy)</label>
+                        <input type="text" id="dateselectionRemWGS" name="date">
+                    </div>
+                    <div class="entgWGrem">
+                        <label for="goalSelectionWGrem" class="wremLab">Enter Index of Goal to Remove</label>
+                        <input type="text" id="goalSelectionWGrem" name="goalInd">
+                    </div>
+                    <button type="submit" class="wButRem">Remove<button>
+                </div>
+            </form>
         </div>
         <div class="yGs">
             <div class="ygshead">
@@ -115,11 +142,14 @@
                 <div class="contentMGS"></div>
             </div>
             <div class="wGs">
-                <button type="button" class="setWGS set">Set</button>
-                <div class="textWGS">
-                    Weekly Goals
+                <div class="wgsTop">
+                    <button type="button" class="setWGS set">Set</button>
+                    <div class="textWGS">
+                        Weekly Goals
+                    </div>
+                    <button type="button" class="removeWGS remove">Remove</button>
                 </div>
-                <button type="button" class="removeWGS remove">Remove</button>
+                <div class="contentWGS"></div>
             </div>
             <div class="tGs">
                 <button type="button" class="setTGS set">Set</button>
@@ -134,8 +164,10 @@
         <div class="contact"></div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js" integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="apireq.js" defer></script>
     <script src="miscfxn.js"></script>
+    <script src="apiLoad.js"></script>
+    <script src="apiFxns.js"></script>
+    <script src="apireq.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

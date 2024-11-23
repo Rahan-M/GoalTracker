@@ -38,7 +38,7 @@ const setMGS=(req,res)=>{
 const dltMGS=(req,res)=>{
     const data=req.body; //{ year: '2025', month: 10, Ind: '1' }
     const tar=Number(data.Ind)-1;
-    const filePath=`./data/MGS${data.year}-${data.month}.json`
+    const filePath=`./data/MGS${data.year}-M${data.month}.json`
     readFile(filePath,'utf-8',(err,data)=>{
         if(err) throw err;
         else{
@@ -64,7 +64,7 @@ const dltMGS=(req,res)=>{
 
 const getMGS=(req,res)=>{
     const {year,month}=req.params;  // req.params ==> { year: '2025', month: '10' }
-    const filePath=`./data/MGS${year}-${month}.json`
+    const filePath=`./data/MGS${year}-M${month}.json`
     readFile(filePath,'utf-8',(err,data)=>{
         if(err && err.code === "ENOENT"){
             let resp={success:false,msg:"please set goals",code:0};
