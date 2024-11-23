@@ -27,6 +27,7 @@ ysetBtn.addEventListener('click',()=>{
     ysetform.style.display="block";
     darken();
 })
+
 const yremBtn=document.querySelector(".removeYGS");
 const yremform=document.querySelector(".ygsRemForm");
 yremBtn.addEventListener('click',()=>{
@@ -34,3 +35,9 @@ yremBtn.addEventListener('click',()=>{
     darken();
 })
 
+const msetBtn=document.querySelector(".setMGS");
+const msetform=document.querySelector(".mgsSetForm");
+msetBtn.addEventListener('click',()=>{
+    msetform.style.display="block";
+    darken();
+})
