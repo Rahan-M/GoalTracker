@@ -1,17 +1,16 @@
 const { json } = require('express');
 const {readFile,writeFile}=require('fs');
 const { stringify } = require('querystring');
-const setMGS=(req,res)=>{
-    res.send("Hello World");
+const setWGS=(req,res)=>{
     const data=req.body;
-    let goal=(data.goals).trim();
-    if(!data || data.year==="" || goal==="" ||goal==="Enter Your Goals Here"){
+    let goal=(data.goals).trim(); 
+    if(!data || data.year==="" || goal===""){
         return res
         .status(404)
         .json({succes:false,msg:"Please fill the blanks"});
     }
-    const filePath=`./data/MGS${data.year}-${data.mon}.json`
-    // So I'm reading the file for that month's goals , if it doesn't exist we create it , if it does we append to it(not exactly)
+    const filePath=`./data/MGS${data.year}-W${data.weekNo}.json`
+    // So I'm reading the file for that week's goals , if it doesn't exist we create it , if it does we append to it(not exactly)
     readFile(filePath,'utf-8',(err,data)=>{
         if(err && err.code === "ENOENT"){
             const newData={index:0,goal:goal};
@@ -37,4 +36,8 @@ const setMGS=(req,res)=>{
         }
     })
     res.status(200).json({success:true,year:data.year});
+}
+
+module.exports={
+    setWGS
 }
