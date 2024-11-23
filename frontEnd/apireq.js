@@ -1,5 +1,5 @@
-let yfsetBtn=document.querySelector('.yBut');
-const yearInput=document.querySelector('#yearselection');
+let yfsetBtn=document.querySelector('.yButSet');
+const yearInputSet=document.querySelector('#yearselectionSetYGS');
 const yearGoals=document.querySelector('#ygoals');
 const date= new Date();
 (async function(){
@@ -20,7 +20,7 @@ yfsetBtn.addEventListener('click',async (e)=>{
     e.preventDefault();
     try{
         const data={
-            year:yearInput.value,
+            year:yearInputSet.value,
             goals:yearGoals.value
         };
         await axios.post('/YGS/set',data);
@@ -30,3 +30,22 @@ yfsetBtn.addEventListener('click',async (e)=>{
     }
 })
 
+
+let yfremBtn=document.querySelector('.yButRem');
+const yearInputRem=document.querySelector('#yearselectionRemYGS');
+const remYgoalInd=document.querySelector('#goalSelection');
+yfremBtn.addEventListener("click",async (e)=>{
+    e.preventDefault();
+    try{
+        const data={
+            year:yearInputRem.value,
+            Ind:remYgoalInd.value
+        }
+        darken();
+        await axios.delete('/YGS/rem',{
+            data:data
+        });
+    }catch(error){
+        console.log(error);
+    }
+})

@@ -1,13 +1,14 @@
 const { json } = require('express');
 const {readFile,writeFile}=require('fs');
+const { stringify } = require('querystring');
 const setYGS=(req,res)=>{
     const data=req.body;
-    if(!data || data.year==="" || data.goals===""){
+    let goal=(data.goals).trim();
+    if(!data || data.year==="" || goal==="" ||goal==="Enter Your Goals Here"){
         return res
         .status(404)
-        .json({succes:false,msg:"Please Enter Name"});
+        .json({succes:false,msg:"Please fill the blanks"});
     }
-    let goal=(data.goals).trim();
     const filePath=`./data/YGS${data.year}.json`
     // So I'm reading the file for that year's goals , if it doesn't exist we create it , if it does we append to it(not exactly)
     readFile(filePath,'utf-8',(err,data)=>{
@@ -24,7 +25,7 @@ const setYGS=(req,res)=>{
                 // What we are doing is we read the entire file which is just one array then we add the newData to that array and reWrite the file with new array
             const jsonData=JSON.parse(data);
             let length=Object.keys(jsonData).length;
-            const newData={index:length-1,goal:goal};
+            const newData={index:length,goal:goal};
             jsonData.push(newData);
             writeFile(filePath,JSON.stringify(jsonData,null,2), (err) => {
                 if (err) {
@@ -36,8 +37,34 @@ const setYGS=(req,res)=>{
     })
     res.status(200).json({success:true,year:data.year});
 }
-const dltYGS=()=>{
-    console.log("Not Defined Yet");
+const dltYGS=(req,res)=>{
+    const data=req.body; //{ year: '2025', Ind: '2' }
+    const tar=Number(data.Ind)-1;
+    console.log("target= ",tar)
+    const filePath=`./data/YGS${data.year}.json`
+    readFile(filePath,'utf-8',(err,data)=>{
+        if(err) throw err;
+        else{
+            //Current Plan : Iterate through the object , find index delete that , update all other indices
+            let jsonData=JSON.parse(data);
+            jsonData=jsonData.filter(obj => Number(obj.index)!==tar);
+            jsonData.forEach((element) => {
+                if(element.index>tar) element.index=Number(element.index)-1;
+            });
+            console.log(jsonData);
+            writeFile(filePath,JSON.stringify(jsonData,null,2),(err)=>{
+                if(err){
+                    console.log("Error during deletion : ",err);
+                    return res.status(400).json({success:false,msg:"Error during rewriting file"});
+                }
+                else {
+                    console.log("Goal Removed Succesfully");
+                }
+            })
+        }
+    })
+    return res.status(200).json({success:true,msg:"Goal Removed Succesfully"});
+
 }
 
 const getYGS=(req,res)=>{

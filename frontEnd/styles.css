@@ -4,6 +4,24 @@
     padding:0;
 }
 
+.overlay{
+    z-index: 1000;
+    position: fixed;
+    top:0;left: 0;
+    display: none;
+    height: 100%;width: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+.set,.remove{
+    cursor:pointer;
+    background-color:#FFFFC7;
+    padding:0.5rem 1rem 0.5rem 1rem;
+    border-radius: 15px;
+    border: 0.1rem solid black;
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
 
 /* Navbar */
 .navbar{
@@ -31,11 +49,12 @@
     font-size: 2.5rem;
 }
 
-
 .main{
     display: flex;
     flex-direction: column;
 }
+
+/* YGS */
 .yGs{
     display:flex;
     flex-direction: column;
@@ -65,16 +84,77 @@
     gap:1.5vh;
     align-items:start;
 }
-.set,.remove{
-    cursor:pointer;
-    background-color:#FFFFC7;
-    padding:0.5rem 1rem 0.5rem 1rem;
-    border-radius: 15px;
-    border: 0.1rem solid black;
+/* YGS Forms */
+.ygsSetForm{
+    display: none;
+    position:fixed;
+    left:35vw;
+    top:25vh;
+    z-index:1100;
+    height:55vh;
+    width:25vw;
+    border-radius: 5%;
+    background-color: #FFFFC7;
+    border:1px outset black;
+    filter: brightness("100%");
+    padding: 2rem 2rem 3rem 2rem;
+}
+.contentYGSF{
+    display: flex;gap:4vh;
+    flex-direction: column;
+    align-items: center;
     font-family: "Orbitron", sans-serif;
     font-optical-sizing: auto;
+    font-weight: 700;
     font-style: normal;
 }
+.txtArea{
+    font-family: "Oswald", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+.yButSet,.yButRem{
+    width:15vw;
+    height:5vh;
+    background-color: #db4a2b;
+    color:white;
+    border-radius:3rem;
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-size: large;
+    border:1px outset white;
+    filter:drop-shadow(100%);
+    font-style: normal;
+}
+.ysetLab{
+    margin-right: 1rem;
+}
+#yearselection{
+    width:15vw;
+}
+.ygsRemForm{
+    display: none;
+    position:fixed;
+    left:35vw;
+    top:35vh;
+    z-index:1100;
+    height:20vh;
+    width:25vw;
+    border-radius: 5%;
+    background-color: #FFFFC7;
+    border:1px outset black;
+    filter: brightness("100%");
+    padding: 2rem 2rem 3rem 2rem;
+}
+.yremLab{
+    margin-left:1vw;
+}
+#goalSelection{
+    margin-left:1vw;
+}
+
 .bottom{
     display:flex;
     height: 45vh;
@@ -121,62 +201,4 @@
 
 /* Form */
 
-.overlay{
-    z-index: 1000;
-    position: fixed;
-    top:0;left: 0;
-    display: none;
-    height: 100%;width: 100%;
-    background-color: rgba(0,0,0,0.7);
-}
 
-
-.ygsSetForm{
-    display: none;
-    position:fixed;
-    left:35vw;
-    top:25vh;
-    z-index:1100;
-    height:55vh;
-    width:25vw;
-    border-radius: 5%;
-    background-color: #FFFFC7;
-    border:1px outset black;
-    filter: brightness("100%");
-    padding: 2rem 2rem 3rem 2rem;
-}
-.contentYGSF{
-    display: flex;gap:4vh;
-    flex-direction: column;
-    align-items: center;
-    font-family: "Orbitron", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-}
-.txtArea{
-    font-family: "Oswald", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-}
-.yBut{
-    width:15vw;
-    height:5vh;
-    background-color: #db4a2b;
-    color:white;
-    border-radius:3rem;
-    font-family: "Orbitron", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 900;
-    font-size: large;
-    border:1px outset white;
-    filter:drop-shadow(100%);
-    font-style: normal;
-}
-.ysetLab{
-    margin-right: 1rem;
-}
-#yearselection{
-    width:15vw;
-}

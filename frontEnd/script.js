@@ -19,15 +19,18 @@ const darken=()=>{
 }
 
 overlay.addEventListener('click',darken);
-removeBtns.forEach((setBtn,i)=>{
-    setBtn.addEventListener('click',darken)
-})
 
 
 const ysetBtn=document.querySelector(".setYGS");
 const ysetform=document.querySelector(".ygsSetForm");
 ysetBtn.addEventListener('click',()=>{
     ysetform.style.display="block";
+    darken();
+})
+const yremBtn=document.querySelector(".removeYGS");
+const yremform=document.querySelector(".ygsRemForm");
+yremBtn.addEventListener('click',()=>{
+    yremform.style.display="block";
     darken();
 })
 
