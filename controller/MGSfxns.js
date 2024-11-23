@@ -1,6 +1,4 @@
-const { json } = require('express');
 const {readFile,writeFile}=require('fs');
-const { stringify } = require('querystring');
 const setMGS=(req,res)=>{
     res.send("Hello World");
     const data=req.body;
