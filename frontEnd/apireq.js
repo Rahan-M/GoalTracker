@@ -2,6 +2,7 @@ const date= new Date();
 LoadYGS();
 LoadMGS();
 LoadWGS();
+LoadDGS();
 let yfsetBtn=document.querySelector('.yButSet');
 yfsetBtn.addEventListener('click',async (e)=>{
     e.preventDefault();
@@ -36,4 +37,14 @@ let wfremBtn=document.querySelector('.wButRem');
 wfremBtn.addEventListener('click',async (e)=>{
     e.preventDefault();
     remWGs()
+})
+let dfsetBtn=document.querySelector('.dButSet');
+dfsetBtn.addEventListener('click',async (e)=>{
+    e.preventDefault();
+    setDGs()
+})
+let dfremBtn=document.querySelector('.dButRem');
+dfremBtn.addEventListener('click',async (e)=>{
+    e.preventDefault();
+    remDGs()
 })

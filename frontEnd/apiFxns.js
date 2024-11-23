@@ -114,3 +114,47 @@ const remWGs=async ()=>{
         console.log(error);
     }
 }
+
+const setDGs=async ()=>{
+    const dateInputSet=document.querySelector('#dateSelectionDGS');
+    const dailyGoals=document.querySelector('#dgoals');
+    const Fulldate=dateInputSet.value;
+    const year=Number(Fulldate.slice(6,10));
+    const month=Number(Fulldate.slice(3,5))-1;
+    const date=Fulldate.slice(0,2);
+    const dateCode=`${month}-${date}`;
+    try{
+        const data={
+            year:year,
+            dateCode:dateCode,
+            goals:dailyGoals.value
+        };
+        await axios.post('/DGS/set',data);
+        darken();
+    }catch(error){
+        console.log(error);
+    }
+}
+
+const remDGs=async ()=>{
+    const dateInputReDGS=document.querySelector('#dateselectionRemDGS');
+    const reDGoalInd=document.querySelector('#goalSelectionDGrem');
+    const dateStr=dateInputReDGS.value;
+    const year=Number(dateStr.slice(6,10));
+    const month=Number(dateStr.slice(3,5))-1;
+    const date=dateStr.slice(0,2);
+    const dateCode=`${month}-${date}`;
+    try{
+        const data={
+            year:year,
+            dateCode:dateCode,
+            Ind:reDGoalInd.value
+        }
+        await axios.delete('/DGS/rem',{
+            data:data
+        });
+        darken();
+    }catch(error){
+        console.log(error);
+    }
+}

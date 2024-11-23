@@ -112,6 +112,33 @@
                     <button type="submit" class="wButRem">Remove<button>
                 </div>
             </form>
+            <form class="dgsSetForm">
+                <div class="contentDGSF">
+                    <div class="entYr">
+                        <label for="dateSelectionDGS" class="dsetLabDGS">Enter Date (dd/mm/yyyy)</label>
+                        <input type="text" id="dateSelectionDGS" name="date">
+                    </div>
+                    <div class="goalsTxt">
+                        <label for="dgoals" class="msetGLab">Enter Your Goals Here :</label>
+                        <textarea name="DGSoals" id="dgoals" rows="15" cols="70" class="txtArea">
+                        </textarea>
+                    </div>
+                    <button type="submit" class="dButSet">Set !!!</button>
+                </div>
+            </form>
+            <form class="dgsRemForm">
+                <div class="contentDGSF">
+                    <div class="entDtDGrem">
+                        <label for="dateselectionRemDGS" class="msetLab">Enter Date (dd/mm/yyyy)</label>
+                        <input type="text" id="dateselectionRemDGS" name="date">
+                    </div>
+                    <div class="entgDGrem">
+                        <label for="goalSelectionDGrem" class="wremLab">Enter Index of Goal to Remove</label>
+                        <input type="text" id="goalSelectionDGrem" name="goalInd">
+                    </div>
+                    <button type="submit" class="dButRem">Remove<button>
+                </div>
+            </form>
         </div>
         <div class="yGs">
             <div class="ygshead">
@@ -151,12 +178,15 @@
                 </div>
                 <div class="contentWGS"></div>
             </div>
-            <div class="tGs">
-                <button type="button" class="setTGS set">Set</button>
-                <div class="textTGS">
-                    Daily Goals
+            <div class="dGs">
+                <div class="dgsTop">
+                    <button type="button" class="setDGS set">Set</button>
+                    <div class="textDGS">
+                        Daily Goals
+                    </div>
+                    <button type="button" class="remDGS remove">Remove</button>
                 </div>
-                <button type="button" class="removeTGS remove">Remove</button>
+                <div class="contentDGS"></div>
             </div>
         </div>
     </main>

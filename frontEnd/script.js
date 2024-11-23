@@ -62,3 +62,16 @@ wremBtn.addEventListener('click',()=>{
     wremform.style.display="block";
     darken();
 })
+const dsetBtn=document.querySelector(".setDGS");
+const dsetform=document.querySelector(".dgsSetForm");
+dsetBtn.addEventListener('click',()=>{
+    dsetform.style.display="block";
+    darken();
+})
+
+const dremBtn=document.querySelector(".remDGS");
+const dremform=document.querySelector(".dgsRemForm");
+dremBtn.addEventListener('click',()=>{
+    dremform.style.display="block";
+    darken();
+})

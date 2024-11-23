@@ -1,14 +1,13 @@
 const {readFile,writeFile}=require('fs');
-const setWGS=(req,res)=>{
+const setDGS=(req,res)=>{
     const data=req.body;
-    let goal=(data.goals).trim(); 
+    let goal=(data.goals).trim();
     if(!data || data.year==="" || goal===""){
         return res
         .status(404)
         .json({succes:false,msg:"Please fill the blanks"});
     }
-    const filePath=`./data/WGS${data.year}-W${data.weekNo}.json`
-    // So I'm reading the file for that week's goals , if it doesn't exist we create it , if it does we append to it(not exactly)
+    const filePath=`./data/DGS${data.year}-D-${data.dateCode}.json`
     readFile(filePath,'utf-8',(err,data)=>{
         if(err && err.code === "ENOENT"){
             const newData={index:0,goal:goal};
@@ -21,7 +20,7 @@ const setWGS=(req,res)=>{
             }else if(err) throw err;
             else{
                 // What we are doing is we read the entire file which is just one array then we add the newData to that array and reWrite the file with new array
-            const jsonData=JSON.parse(data);
+                const jsonData=JSON.parse(data);
             let length=Object.keys(jsonData).length;
             const newData={index:length,goal:goal};
             jsonData.push(newData);
@@ -31,13 +30,13 @@ const setWGS=(req,res)=>{
                 } else {
                     console.log('Data appended successfully.');
                 }});
-        }
-    })
-    res.status(200).json({success:true,year:data.year});
-}
-const getWGS=(req,res)=>{
-    const {year,weekNo}=req.params;
-    const filePath=`./data/WGS${year}-W${weekNo}.json`
+            }
+        })
+        res.status(200).json({success:true,year:data.year});
+    }
+const getDGS=(req,res)=>{
+    const {year,dateCode}=req.params;
+    const filePath=`./data/DGS${year}-D-${dateCode}.json`
     readFile(filePath,'utf-8',(err,data)=>{
         if(err && err.code === "ENOENT"){
             console.log("Reached till this point")
@@ -51,10 +50,10 @@ const getWGS=(req,res)=>{
         }
     })
 }
-const dltWGS=(req,res)=>{
-    const data=req.body; //{ year: '2025', weekNo: 47, Ind: '1' }
+const dltDGS=(req,res)=>{
+    const data=req.body; //{ year: '2025', dateCode: 10-23, Ind: '1' }
     const tar=Number(data.Ind)-1;
-    const filePath=`./data/WGS${data.year}-W${data.weekNo}.json`
+    const filePath=`./data/DGS${data.year}-D-${data.dateCode}.json`
     readFile(filePath,'utf-8',(err,data)=>{
         if(err && err.code==="ENOENT") return res.json({success:false,msg:"No goals set for this week"}); 
         else if(err) throw err;
@@ -80,7 +79,7 @@ const dltWGS=(req,res)=>{
 
 }
 module.exports={
-    setWGS,
-    getWGS,
-    dltWGS
+    setDGS,
+    getDGS,
+    dltDGS
 }

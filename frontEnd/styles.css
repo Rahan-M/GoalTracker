@@ -74,7 +74,8 @@
     margin-bottom: 5vh;
 }
 .yearGoalsHead{
-    font-weight:900;
+    /* font-weight:700; */
+    font-size:3rem;
 }
 .contentYGS{
     width:100vw;
@@ -88,11 +89,11 @@
     align-items:start;
 }
 /* YGS Forms */
-.ygsSetForm,.mgsSetForm,.wgsSetForm{
+.ygsSetForm,.mgsSetForm,.wgsSetForm,.dgsSetForm{
     display: none;
     position:fixed;
     left:35vw;
-    top:22vh;
+    top:18vh;
     z-index:1100;
     height:58vh;
     width:25vw;
@@ -102,8 +103,8 @@
     filter: brightness("100%");
     padding: 2rem 2rem 3rem 2rem;
 }
-.contentYGSF,.contentMGSF,.contentWGSF{
-    display: flex;gap:4vh;
+.contentYGSF,.contentMGSF,.contentWGSF,.contentDGSF{
+    display: flex;gap:3vh;
     flex-direction: column;
     align-items: center;
     font-family: "Orbitron", sans-serif;
@@ -117,7 +118,7 @@
     font-weight: 400;
     font-style: normal;
 }
-.yButSet,.yButRem,.mButSet,.mButRem,.wButSet,.wButRem{
+.yButSet,.yButRem,.mButSet,.mButRem,.wButSet,.wButRem,.dButSet,.dButRem{
     width:15vw;
     height:5vh;
     background-color: #db4a2b;
@@ -137,7 +138,7 @@
 #yearselection{
     width:15vw;
 }
-.ygsRemForm,.mgsRemForm,.wgsRemForm{
+.ygsRemForm,.mgsRemForm,.wgsRemForm,.dgsRemForm{
     display: none;
     position:fixed;
     left:35vw;
@@ -179,12 +180,12 @@
     font-style: normal;
     padding-top:1rem;
 }
-.mgsTop,.wgsTop{
+.mgsTop,.wgsTop,.dgsTop{
     display:flex;
     align-items: flex-start;justify-content: space-around;
     width:33vw;
 }
-.contentMGS,.contentWGS{
+.contentMGS,.contentWGS,.contentDGS{
     display:flex;gap:1.5vh;
     flex-direction: column;
     align-items: flex-start;
@@ -223,8 +224,10 @@
     top:18vh;
     height:63vh;
 }
-.tGs{
-    display:flex;
+
+/* DGS */
+.dGs{
+    display:flex;flex-direction: column;
     align-items: flex-start;justify-content: space-around;
     text-align: center;
     width:33vw;
@@ -234,6 +237,9 @@
     font-weight: 500;
     font-style: normal;
     padding-top:1rem;
+}
+.dgsSetForm{
+    height:60vh;
 }
 
 
