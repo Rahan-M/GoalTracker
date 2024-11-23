@@ -38,35 +38,32 @@ const setMGS=(req,res)=>{
     })
     res.status(200).json({success:true,year:data.year});
 }
-// const dltMGS=(req,res)=>{
-//     const data=req.body; //{ year: '2025', Ind: '2' }
-//     const tar=Number(data.Ind)-1;
-//     console.log("target= ",tar)
-//     const filePath=`./data/MGS${data.year}.json`
-//     readFile(filePath,'utf-8',(err,data)=>{
-//         if(err) throw err;
-//         else{
-//             //Current Plan : Iterate through the object , find index delete that , update all other indices
-//             let jsonData=JSON.parse(data);
-//             jsonData=jsonData.filter(obj => Number(obj.index)!==tar);
-//             jsonData.forEach((element) => {
-//                 if(element.index>tar) element.index=Number(element.index)-1;
-//             });
-//             console.log(jsonData);
-//             writeFile(filePath,JSON.stringify(jsonData,null,2),(err)=>{
-//                 if(err){
-//                     console.log("Error during deletion : ",err);
-//                     return res.status(400).json({success:false,msg:"Error during rewriting file"});
-//                 }
-//                 else {
-//                     console.log("Goal Removed Succesfully");
-//                 }
-//             })
-//         }
-//     })
-//     return res.status(200).json({success:true,msg:"Goal Removed Succesfully"});
-
-// }
+const dltMGS=(req,res)=>{
+    const data=req.body; //{ year: '2025', month: 10, Ind: '1' }
+    const tar=Number(data.Ind)-1;
+    const filePath=`./data/MGS${data.year}-${data.month}.json`
+    readFile(filePath,'utf-8',(err,data)=>{
+        if(err) throw err;
+        else{
+            //Current Plan : Iterate through the object , find index delete that , update all other indices
+            let jsonData=JSON.parse(data);
+            jsonData=jsonData.filter(obj => Number(obj.index)!==tar);
+            jsonData.forEach((element) => {
+                if(element.index>tar) element.index=Number(element.index)-1;
+            });
+            writeFile(filePath,JSON.stringify(jsonData,null,2),(err)=>{
+                if(err){
+                    console.log("Error during deletion : ",err);
+                    return res.status(400).json({success:false,msg:"Error during rewriting file"});
+                }
+                else {
+                    console.log("Goal Removed Succesfully");
+                }
+            })
+        }
+    })
+    return res.status(200).json({success:true,msg:"Goal Removed Succesfully"});
+}
 
 const getMGS=(req,res)=>{
     const {year,month}=req.params;  // req.params ==> { year: '2025', month: '10' }
@@ -86,5 +83,6 @@ const getMGS=(req,res)=>{
 
 module.exports={
     setMGS,
-    getMGS
+    getMGS,
+    dltMGS
 }

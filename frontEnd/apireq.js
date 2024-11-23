@@ -71,7 +71,6 @@ mfsetBtn.addEventListener('click',async (e)=>{
             mon:month,
             goals:mGoal.value
         };
-        console.log(data);
         darken();
         await axios.post('/MGS/set',data);
     }catch(error){
@@ -81,21 +80,21 @@ mfsetBtn.addEventListener('click',async (e)=>{
 
 let mfremBtn=document.querySelector('.mButRem');
 const yearInputRemMGS=document.querySelector('#yearselectionRemMGS');
-const monthInputRemMGS=document.querySelector('#monthselectionRemMGS');
-const remMgoalInd=document.querySelector('#goalSelection');
-yfremBtn.addEventListener("click",async (e)=>{
+const monthInputRemMGS=document.querySelector('#monselectionRemMGS');
+const remMgoalInd=document.querySelector('#goalSelectionMGrem');
+mfremBtn.addEventListener("click",async (e)=>{
     e.preventDefault();
-    let month=monthInd(monthInputRemMGS.value);
+    let month=monthind(monthInputRemMGS.value);
     try{
         const data={
             year:yearInputRemMGS.value,
             month:month,
-            Ind:remYgoalInd.value
+            Ind:remMgoalInd.value
         }
-        darken();
         await axios.delete('/MGS/rem',{
             data:data
         });
+        darken();
     }catch(error){
         console.log(error);
     }

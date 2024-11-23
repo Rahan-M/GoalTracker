@@ -41,3 +41,10 @@ msetBtn.addEventListener('click',()=>{
     msetform.style.display="block";
     darken();
 })
+
+const mremBtn=document.querySelector(".remMGS");
+const mremform=document.querySelector(".mgsRemForm");
+mremBtn.addEventListener('click',()=>{
+    mremform.style.display="block";
+    darken();
+})
