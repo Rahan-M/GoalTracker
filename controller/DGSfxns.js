@@ -39,7 +39,6 @@ const getDGS=(req,res)=>{
     const filePath=`./data/DGS${year}-D-${dateCode}.json`
     readFile(filePath,'utf-8',(err,data)=>{
         if(err && err.code === "ENOENT"){
-            console.log("Reached till this point")
             let resp={success:false,msg:"please set goals",code:0};
             res.status(400).json(resp)
         }else if(err) throw err;

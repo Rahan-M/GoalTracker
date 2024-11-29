@@ -40,7 +40,6 @@ const getWGS=(req,res)=>{
     const filePath=`./data/WGS${year}-W${weekNo}.json`
     readFile(filePath,'utf-8',(err,data)=>{
         if(err && err.code === "ENOENT"){
-            console.log("Reached till this point")
             let resp={success:false,msg:"please set goals",code:0};
             res.status(400).json(resp)
         }else if(err) throw err;
@@ -65,6 +64,7 @@ const dltWGS=(req,res)=>{
             jsonData.forEach((element) => {
                 if(element.index>tar) element.index=Number(element.index)-1;
             });
+            console.log("Hello")
             writeFile(filePath,JSON.stringify(jsonData,null,2),(err)=>{
                 if(err){
                     console.log("Error during deletion : ",err);

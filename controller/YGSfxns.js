@@ -38,7 +38,6 @@ const setYGS=(req,res)=>{
 const dltYGS=(req,res)=>{
     const data=req.body; //{ year: '2025', Ind: '2' }
     const tar=Number(data.Ind)-1;
-    console.log("target= ",tar)
     const filePath=`./data/YGS${data.year}.json`
     readFile(filePath,'utf-8',(err,data)=>{
         if(err) throw err;
@@ -49,7 +48,6 @@ const dltYGS=(req,res)=>{
             jsonData.forEach((element) => {
                 if(element.index>tar) element.index=Number(element.index)-1;
             });
-            console.log(jsonData);
             writeFile(filePath,JSON.stringify(jsonData,null,2),(err)=>{
                 if(err){
                     console.log("Error during deletion : ",err);
